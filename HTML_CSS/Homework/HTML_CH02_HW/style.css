@@ -13,3 +13,12 @@ nav {
 img {
   padding-left: 30px;
 }
+
+body {
+  background-color: darkolivegreen;
+  color: beige;
+}
+
+a {
+  color: rgb(211, 170, 109);
+}

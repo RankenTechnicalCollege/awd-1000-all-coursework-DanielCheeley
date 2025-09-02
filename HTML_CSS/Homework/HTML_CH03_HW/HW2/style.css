@@ -1,4 +1,4 @@
-#wrapper {
+.wrapper {
   width: 80%;
   margin-top: 0;
   margin-bottom: 0;
@@ -9,4 +9,8 @@
 body {
   background-color: darkolivegreen;
   color: beige;
+}
+
+a {
+  color: rgb(211, 170, 109);
 }
