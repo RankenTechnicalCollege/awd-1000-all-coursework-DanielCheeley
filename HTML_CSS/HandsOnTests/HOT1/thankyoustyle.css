@@ -1,0 +1,72 @@
+div {
+  font-size: 30px;
+}
+
+#thanks {
+  font-size: 20px;
+}
+
+#warning {
+  font-size: 14px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+  background-color: lightgray;
+}
+
+main {
+  margin-left: 50px;
+  margin-right: 50px;
+  flex-grow: 1;
+}
+
+header {
+  background-color: black;
+}
+
+nav {
+  font-size: larger;
+}
+
+#navul {
+  color: white;
+  padding-left: 50px;
+}
+
+.headerA {
+  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+#companyname {
+  color: white;
+  font-size: 50px;
+  padding-left: 30px;
+  display: inline-block;
+}
+
+img {
+  display: inline-block;
+}
+
+#slogan {
+  color: white;
+  margin-left: auto;
+  padding-right: 50px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-size: 24px;
+}
+
+footer {
+  margin-left: 30px;
+  margin-right: 30px;
+}
