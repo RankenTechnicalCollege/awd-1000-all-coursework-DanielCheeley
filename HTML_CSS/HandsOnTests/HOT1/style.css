@@ -1,3 +1,11 @@
+/* CSS reset code */
+body, header, nav, main, footer, h1, div, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Rest of code */
 body {
   display: flex;
   flex-direction: column;
@@ -23,6 +31,19 @@ nav {
 #navul {
   color: white;
   padding-left: 50px;
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 0.5em 1em;
 }
 
 .headerA {
@@ -56,6 +77,7 @@ img {
 footer {
   margin-left: 30px;
   margin-right: 30px;
+  font-size: 0.75em;
 }
 
 iframe {
@@ -83,4 +105,18 @@ button {
   position: absolute;
   right: 100px;
   top: 270px;
+}
+
+
+
+#randomNumberDisplay {
+  font-size: 30px;
+}
+
+#thanks {
+  font-size: 20px;
+}
+
+#warning {
+  font-size: 14px;
 }
