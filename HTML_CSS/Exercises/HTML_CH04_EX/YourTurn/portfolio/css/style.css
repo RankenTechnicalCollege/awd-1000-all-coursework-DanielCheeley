@@ -1,0 +1,142 @@
+/*Name: Daniel Cheeley
+File name: style.css
+date: 9/5/25*/
+
+/*css reset*/
+body, header, nav, main, footer, img, h1, h3, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Body and Image Styling */
+body {
+  background-color: darkolivegreen;
+}
+
+img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 20px;
+}
+
+/* Container: Flex Layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left Content: Image + Name + Slogan */
+.container > img {
+  flex-shrink: 0;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  border-bottom: 1px solid black;
+}
+
+#name {
+  font-size: 4.5em;
+  white-space: nowrap;
+  color: rgb(211, 170, 109);
+}
+
+#slogan {
+  font-size: 1.5em;
+  color: rgb(211, 170, 109);
+}
+
+/* Nav element to the Right */
+nav {
+  margin-left: auto;
+  border-bottom: 1px solid black;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+nav li {
+  padding: 20px;
+  display: inline-block;
+}
+
+nav a {
+  color: rgb(211, 170, 109);
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.button {
+  background-color: darkslategray;
+  border: none;
+  color: beige;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*Style rules for main content*/
+main {
+  padding: 2%;
+  font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+  color: bisque;
+  border-top: solid 1px black;
+}
+
+main p {
+  font-size: 1.5em;
+
+}
+
+main a{
+  text-decoration: none;
+  color: rgb(211, 170, 109);
+}
+
+main a:hover {
+  color: bisque
+}
+
+main h2 {
+  font-size: 2.5em;
+}
+
+main h3{
+  font-size: 2em;
+}
+
+main ul, ol {
+  font-size: 1.5em;
+}
+
+/*style rules for footer content*/
+footer {
+  font-size: 0.75em;
+  border-top: solid 1px black;
+  padding: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(211, 170, 109);
+}
+
+footer a:hover {
+  color: bisque;
+}
