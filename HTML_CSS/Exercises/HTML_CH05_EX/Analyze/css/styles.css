@@ -103,5 +103,5 @@ nav li {
 
 /* tablet desktop hide */
 .tablet-desktop {
-    visibility: hidden;
+    display: none;
 }

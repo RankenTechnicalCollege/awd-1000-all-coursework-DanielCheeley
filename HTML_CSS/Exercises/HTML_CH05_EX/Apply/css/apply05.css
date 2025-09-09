@@ -23,7 +23,7 @@ img {
 
 /*Style rule to hide tablet-desk class*/
 .tablet-desk {
-    visibility: hidden;
+    display: none;
 }
 
 /* Style rule for header */
