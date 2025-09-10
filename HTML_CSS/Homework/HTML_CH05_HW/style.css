@@ -1,0 +1,89 @@
+/*header and nav styling*/
+header {
+  padding: 2%;
+  background-color: lightgray;
+  border-bottom: 1px solid black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#headerTitle {
+  font-family: Audiowide;
+  font-size: 3em;
+}
+
+nav {
+  margin: 0 4%;
+  border-top: 1px black solid;
+  
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+nav a {
+  color:black;
+  padding-left: 10px;
+}
+
+a:hover {
+  color: white;
+}
+
+
+/*body styling*/
+body {
+  margin: 0;
+  font-family: Roboto;
+  background-color: lightblue;
+}
+
+main {
+  padding: 3%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+footer {
+  margin: 3%;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-top: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  nav ul{
+    display: block;
+  }
+
+  nav li {
+    display: block;
+    font-size: 1.25em;
+  }
+
+  #headerTitle {
+    font-size: 2em;
+  }
+
+  header {
+    padding:1% 10%;
+  }
+
+  main {
+    padding: 8%;
+  }
+}
