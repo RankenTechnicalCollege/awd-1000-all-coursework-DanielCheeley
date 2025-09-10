@@ -89,3 +89,22 @@ footer {
 .aboutimages {
   width: 150px;
 }
+
+/*mobile styling*/
+
+.round {
+  border-radius: 20px;
+}
+
+.tel-link {
+  border: 5px solid white;
+}
+
+.mail-link {
+  border: 5px solid white;
+}
+
+/*hide non essentials*/
+.mobile-hide {
+  display: none;
+}
