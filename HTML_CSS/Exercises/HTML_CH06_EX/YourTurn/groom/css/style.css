@@ -1,6 +1,6 @@
 /*Name: Daniel Cheeley
 File name: style.css
-date: 9/5/25*/
+date: 9/15/25*/
 
 /*css reset*/
 body, header, nav, main, footer, img, h1, h3, ul, li {
@@ -78,33 +78,71 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: lightskyblue;
-}
-
 footer {
   padding: 20px;
 }
-
-.aboutimages {
-  width: 150px;
-}
-
-/*mobile styling*/
 
 .round {
   border-radius: 20px;
 }
 
-.tel-link {
-  border: 5px solid white;
-}
 
-.mail-link {
-  border: 5px solid white;
-}
+/*mobile styling*/
 
-/*hide non essentials*/
-.mobile-hide {
+@media screen and (max-width: 480px) {
+
+  .aboutimages {
+  width: 150px;
+  }
+
+  .tel-link {
+  border: 5px solid white;
+  }
+
+  .mail-link {
+  border: 5px solid white;
+  }
+
+  /*hide non essentials*/
+  .mobile-hide {
   display: none;
+  }
+}
+
+/*media query for tablet and desk*/
+@media screen and (min-width: 481px) {
+  .aboutimages {
+    width: 300px;
+  }
+
+  a:hover {
+  color: lightskyblue;
+  }
+
+  header h1 {
+    font-size: 6em;
+  }
+}
+
+/*media query for large desktops*/
+@media screen and (min-width: 1921px) {
+  #container {
+    width: 1920px;
+    margin: 0 auto;
+    background-color: blueviolet;
+  }
+
+  body {
+    background-image: linear-gradient(white 5%, blueviolet);
+  }
+
+}
+
+/*media query for print*/
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
 }
