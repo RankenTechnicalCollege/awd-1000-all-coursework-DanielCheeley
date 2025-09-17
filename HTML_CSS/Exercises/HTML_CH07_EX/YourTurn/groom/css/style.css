@@ -1,0 +1,148 @@
+/*Name: Daniel Cheeley
+File name: style.css
+date: 9/15/25*/
+
+/*css reset*/
+body, header, nav, main, footer, img, h1, h3, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: darkslateblue;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#title {
+  margin: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+nav {
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav li {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+main {
+  margin: 10px;
+  padding: 20px;
+  border: 5px solid white;
+}
+
+main p {
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+main ul {
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+main ol {
+    font-size: 1.5em;
+}
+
+main h3 {
+  font-size: 2em;
+}
+
+main h2 {
+  font-size: 2.5em;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+footer {
+  padding: 20px;
+}
+
+.round {
+  border-radius: 20px;
+}
+
+
+/*mobile styling*/
+
+@media screen and (max-width: 480px) {
+
+  .aboutimages {
+  width: 150px;
+  }
+
+  .tel-link {
+  border: 5px solid white;
+  }
+
+  .mail-link {
+  border: 5px solid white;
+  }
+
+  /*hide non essentials*/
+  .mobile-hide {
+  display: none;
+  }
+}
+
+/*media query for tablet and desk*/
+@media screen and (min-width: 481px) {
+  .aboutimages {
+    width: 300px;
+  }
+
+  a:hover {
+  color: lightskyblue;
+  }
+
+  header h1 {
+    font-size: 6em;
+  }
+}
+
+/*media query for large desktops*/
+@media screen and (min-width: 1921px) {
+  #container {
+    width: 1920px;
+    margin: 0 auto;
+    background-color: blueviolet;
+  }
+
+  body {
+    background-image: linear-gradient(white 5%, blueviolet);
+  }
+
+}
+
+/*media query for print*/
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+}
