@@ -1,0 +1,140 @@
+/*css reset*/
+body, header, nav, main, footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*global styles*/
+body {
+  font-family: Cambria, Cochin, Georgia, Times;
+  background-color: #f4f4f4;
+  margin: 60px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style-type: none;
+  position: absolute;
+  top: 150px;
+  left: 650px;
+}
+
+/* Keep this for li layout */
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* Make the entire li button clickable */
+nav li a {
+  display: block;
+  padding: 15px;
+  font-size: 1.25em;
+  border-radius: 25px;
+  width: 150px;
+  text-align: center;
+  background-color: rgb(46, 134, 34);
+  color: white;
+  text-decoration: none;
+  box-shadow: 10px 10px 6px rgb(21, 61, 15);
+}
+
+
+#hero-banner-slogan {
+  display: inline-block;
+  width: 100%;
+  text-indent: 80px;
+  color: white;
+  text-align: left;
+  font-style: italic;
+  background-color: rgb(46, 134, 34);
+  box-shadow: 1px 5px 20px grey;
+}
+
+
+/*about section*/
+#about {
+  font-size: 1.75em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  text-shadow: 1px 2px 5px grey;
+}
+
+img {
+  width: 32%;
+  height: auto;
+  float: left;
+  margin-right: 30px;
+  border-radius: 30px;
+  box-shadow: 4px 4px 10px grey;
+}
+
+/*hero down here to clear border radius cuz im lazy*/
+#hero {
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 5px 20px grey;
+}
+
+/*menu section*/
+h2 {
+  clear: left;
+  padding-top: 80px;
+  font-size: 2.25em;
+  text-shadow: 1px 2px 5px grey;
+}
+
+.menu-item h4 {
+  font-size: 1.75em;
+  text-align: center;
+
+}
+
+.menu-item img {
+  float: right;
+  margin: 50px;
+  width: 40%;
+}
+
+.menu-item p {
+  margin-left: 30px;
+  font-size: 1.75em;
+}
+
+.price {
+  text-align: center;
+}
+
+#entree2 {
+  clear: right;
+  float: left;
+}
+
+#entree3 {
+  clear: left;
+  float: right;
+}
+
+span {
+  color: green;
+  font-weight: bold;
+}
+
+/*contact section*/
+#contact p {
+  font-size: 1.75em;
+}
