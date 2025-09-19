@@ -135,6 +135,48 @@ span {
 }
 
 /*contact section*/
-#contact p {
+#contact {
+  text-align: center;
   font-size: 1.75em;
+}
+
+#contact li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#contact a {
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  text-shadow: 1px 2px 4px rgb(145, 140, 140);
+}
+#contact a:hover {
+  color: rgb(54, 211, 54);
+}
+
+
+#location h3 {
+  font-size: 1.5em;
+  text-align: center;
+}
+iframe {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  border: 4px solid rgb(25, 141, 25);
+  box-shadow: 1px 5px 20px grey;
+}
+
+footer {
+  margin: 30px 0;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: rgb(46, 134, 34);
+  text-indent: 40px;
+  color: white;
+  font-style: italic;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 1px 5px 20px grey;
 }
