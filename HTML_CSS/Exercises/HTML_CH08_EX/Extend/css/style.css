@@ -1,0 +1,52 @@
+/*Daniel Cheeley, 9/19/25*/
+
+table {
+  width: 70%;
+	margin: 0 auto;
+  border: 5px solid rgb(255, 118, 65);
+  text-align: center;
+  font-family: sans-serif;
+  box-shadow: 8px 8px 10px rgb(65, 40, 40);
+}
+
+body {
+  background-color: rgb(253, 230, 230);
+}
+
+caption {
+  font-size: 2em;
+  padding: 2%;
+  color: rgb(214, 55, 55);
+  font-weight: bold;
+}
+
+th {
+  background-color: rgb(182, 49, 49);
+  font-size: 1.25em;
+  font-weight: bold;
+  color: white;
+}
+
+table, tr, th, td {
+	border-collapse: collapse;
+	padding: 1%;
+}
+
+th, td {
+	border: 2px solid rgb(253, 169, 169);
+}
+
+.redish {
+  background-color: rgb(241, 149, 113);
+  text-align: left;
+}
+
+.whiteish {
+  background-color: rgb(255, 240, 240);
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
