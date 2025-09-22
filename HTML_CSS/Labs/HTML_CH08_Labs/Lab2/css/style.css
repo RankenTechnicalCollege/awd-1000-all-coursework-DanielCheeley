@@ -1,7 +1,7 @@
 /*
 Student Name: Daniel Cheeley
 File Name: style.css
-Date: 9/16/25
+Date: 9/22/25
 /*
 
 /*css reset*/
@@ -15,7 +15,7 @@ body, header, nav, main, footer, img, h1, h3 ul, aside, figure, figcaption {
 /*Style rules for mobile viewport*/
 
 /*Style rules to show mobile class and hide tab-desk*/
-.mobile{
+.mobile, .mobile-tablet {
   display: block;
 }
 
@@ -26,7 +26,7 @@ body, header, nav, main, footer, img, h1, h3 ul, aside, figure, figcaption {
   font-family: 'Lora';
 }
 
-.tab-desk {
+.tab-desk, .desktop {
   display: none;
 }
 
@@ -132,7 +132,7 @@ main ul {
   text-align: center;
 }
 
-#contact {
+#contact, #form h2 {
  text-align: center;
 }
 
@@ -147,6 +147,31 @@ main ul {
   color: #f6eee4;
   text-decoration: none;
   font-weight: bold;
+}
+
+/*form style rules*/
+fieldset, input, textarea {
+  margin-bottom: 1%;
+}
+
+fieldset legend {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+label {
+  display: block;
+  padding-top: 1%;
+}
+
+form #submit {
+  margin: 0 auto;
+  display: block;
+  padding: 2%;
+  background-color: #78593a;
+  color: #f6eee4;
+  font-size: 1.25em;
+  border-radius: 10px;
 }
 
 /*style rules for footer content*/
@@ -170,6 +195,12 @@ footer a {
   }
   .mobile {
     display: none;
+  }
+
+  /*tablet viewport: style rules for form*/
+  form {
+    width: 70%;
+    margin: 0 auto;
   }
 
   /*tablet viewport: style rules for nav area*/
@@ -210,6 +241,21 @@ footer a {
     opacity: 0.5;
   }
 
+  /*Desktop Viewport: Style rules for form elements*/
+  form {
+    width: auto;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+
+  .btn {
+    grid-column: 1 / span 2;
+  }
+
   /*desktop viewport: style rules for main content*/
   #info ul {
     margin-left: 5%;
@@ -225,6 +271,41 @@ footer a {
     display: grid;
     grid-column: 1 / span 3;
     font-size: 2em;
+  }
+
+  .desktop {
+    display: initial;
+  }
+
+  .mobile-tablet {
+    display: none;
+  }
+  /*table styles*/
+  table {
+    border: 1px solid #2a1f14;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1%;
+  }
+
+  th, td {
+    border: 1px solid #2a1f14;
+    padding: 1%;
+  }
+
+  th {
+    background-color: #2a1f14;
+    color: white;
+    font-size: 1.15em;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #deccba;
   }
 }
 
@@ -261,5 +342,5 @@ footer a {
   body {
     background-color: white;
     color: black;
-  };
+  }
 }
