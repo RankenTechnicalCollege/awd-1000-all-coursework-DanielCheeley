@@ -1,0 +1,26 @@
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 3px;
+  border: 2px solid black;
+}
+
+th {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.num {
+  text-align: right;
+}
+
+tr:nth-child(odd) {
+  background-color: yellow;
+}
+
+.clearback  {
+  background-color: white;
+}
