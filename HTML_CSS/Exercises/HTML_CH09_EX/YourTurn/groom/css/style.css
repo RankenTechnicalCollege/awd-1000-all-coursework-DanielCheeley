@@ -86,6 +86,14 @@ footer {
   border-radius: 20px;
 }
 
+video {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 30px;
+}
+
+
 .aboutimages {
   margin-bottom: 4%;
 }
