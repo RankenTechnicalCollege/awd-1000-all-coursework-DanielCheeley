@@ -4,7 +4,31 @@
     File Name: styles.css
 */
 
+.hero {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../images/baby-hawk.jpg);
+    background-size: cover;
+    min-height: 100vh; /* full screen height */
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+}
 
+.welcome {
+    position: absolute;
+    top: 40%;
+}
+.text-dark-slate-grey {
+    color: rgb(29, 49, 49);
+    font-weight: bold;
+}
+
+.display-1 {
+    font-size: 4em;
+}
+
+.bg-brown {
+    background-color: #2a1f14;
+}
 
 /* Media Query for Tablet Viewport */
 @media (min-width: 768px) { 
