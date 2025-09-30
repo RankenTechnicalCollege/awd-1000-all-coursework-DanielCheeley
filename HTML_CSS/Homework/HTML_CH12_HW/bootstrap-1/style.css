@@ -1,0 +1,52 @@
+.bg-img {
+  background-image: url("images/treeBanner.jpg"); /* update path */
+  background-size: cover;       /* makes it cover entire page */
+  background-repeat: no-repeat; /* prevent tiling */
+  background-position: center;  /* center the image */
+  min-height: 100vh;            /* ensures it fills full viewport height */
+  width: 100%;                  /* ensures full width */
+}
+
+form {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 50px;
+  border-radius: 30px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+input {
+  margin: 2%;
+  border-radius: 10px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0 4px 10px black;
+}
+
+input::placeholder {
+  padding-left: 10px;
+}
+
+label {
+  margin: 2%;
+  display: block;
+  font-size: 1.25em;
+}
+
+fieldset {
+  margin: 2%;
+  padding: 2%;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px black;
+}
+
+#submit {
+  width: 20%;
+  border-radius: 30px;
+  background-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 4px 10px black;
+}
