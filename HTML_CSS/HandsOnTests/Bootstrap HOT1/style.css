@@ -1,0 +1,25 @@
+.jumboBackgroundImg {
+  background-image: url(images/blue-abstract-gradient-background-vector-50754294.avif);
+}
+
+.txtshadow {
+  text-shadow: 4px 4px 8px black;
+}
+
+a {
+  color:ghostwhite;
+}
+
+.footerTxtSize {
+  font-size: 1.2em;
+}
+
+.cardStyle {
+  width: 18rem;
+}
+
+.roundedImg {
+  border-radius: 20px;
+  width: 100%;
+  height: 200px;
+}
