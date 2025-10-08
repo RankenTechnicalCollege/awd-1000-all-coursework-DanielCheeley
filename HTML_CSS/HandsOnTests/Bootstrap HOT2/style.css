@@ -1,0 +1,14 @@
+/*CSS FOR IMAGE STYLING NOT FOR FUCINALITY*/
+
+.sizeC {
+  max-height: 400px; overflow: hidden;
+}
+
+.objectFit {
+  object-fit: cover; height: 400px;
+}
+
+.footerSize {
+  margin-bottom: 0;
+  width: 60px; height: 60px; object-fit: cover;
+}
