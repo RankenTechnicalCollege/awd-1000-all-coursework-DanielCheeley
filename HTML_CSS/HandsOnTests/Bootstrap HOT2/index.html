@@ -3,18 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Favorite Snack</title>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-  <div class="row">
-    <div class="col">Column 1</div>
-    <div class="col">Column 2</div>
-    <div class="col">Column 3</div>
-    <div class="col">Column 4</div>
-    <div class="col">Column 5</div>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">My Favorite Snack</h2>
+
+    <!-- Flexbox Row -->
+    <div class="d-flex flex-column flex-md-row justify-content-evenly align-items-start text-center">
+      
+      <!-- Column 1: Accordion -->
+      <div class="bg-primary text-white p-3 m-2 rounded flex-fill">
+        <h5>Accordion Example</h5>
+        <div class="accordion" id="snackAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapseOne" aria-expanded="true" 
+                      aria-controls="collapseOne">
+                Favorite Snack Info
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" 
+                 aria-labelledby="headingOne" data-bs-parent="#snackAccordion">
+              <div class="accordion-body text-dark">
+                My favorite snack is popcorn! It’s crispy, buttery, and perfect for movie nights.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: List Group with Badges -->
+      <div class="bg-secondary text-white p-3 m-2 rounded flex-fill">
+        <h5>Top Snack Flavors</h5>
+        <ul class="list-group text-start">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Butter
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Caramel
+            <span class="badge bg-success rounded-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Cheese
+            <span class="badge bg-warning text-dark rounded-pill">3</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kettle Corn
+            <span class="badge bg-danger rounded-pill">4</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Responsive Image -->
+      <div class="bg-success text-white p-3 m-2 rounded flex-fill">
+        <h5>Popcorn Image</h5>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Popcorn_in_bowl.jpg" 
+             alt="Bowl of popcorn" class="img-fluid rounded shadow">
+        <p class="mt-2">A delicious bowl of buttery popcorn!</p>
+      </div>
+
+      <!-- Column 4: Modal Dialog -->
+      <div class="bg-danger text-white p-3 m-2 rounded flex-fill">
+        <h5>Snack Details</h5>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#snackModal">
+          Open Modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="snackModal" tabindex="-1" aria-labelledby="snackModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content text-dark">
+              <div class="modal-header">
+                <h5 class="modal-title" id="snackModalLabel">Popcorn Facts</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Popcorn is a type of corn kernel that expands and puffs up when heated. 
+                It’s a whole grain and a healthy snack when prepared without too much butter or sugar!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 5: Paragraph with Span styled as Heading -->
+      <div class="bg-warning text-dark p-3 m-2 rounded flex-fill">
+        <p>
+          <span class="h4 fw-bold">Fun Fact:</span>  
+          Popcorn was first discovered thousands of years ago and was even used in ancient celebrations.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
