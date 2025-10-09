@@ -1,7 +1,7 @@
 /*
-    Student Name
-	File Name: 
-	Current Date: 
+  Student Name: daniel Cheeley
+	File Name: apply10.css
+	Current Date: 10/9/25
 */
 
 /* CSS reset */
@@ -54,6 +54,23 @@ button {
     height: 200px;
     background-color: #33091b;
     margin-left: 6%;
+		-webkit-animation: color;
+		animation-duration: 5s;
+}
+
+.square:hover {
+	transform: translate(80px);
+}
+
+
+/*animation*/
+@-webkit-keyframes color {
+	from { background-color: #fbdae9; }
+	to { background-color: #660b32; }
+}
+@keyframes color {
+	from { background-color: #fbdae9; }
+	to { background-color: #660b32; }
 }
 
 /* Style rules for the footer */
