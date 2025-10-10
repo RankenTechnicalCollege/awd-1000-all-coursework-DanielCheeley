@@ -1,6 +1,6 @@
 /*
-    Author:
-    Date:
+    Author: Daniel Cheeley
+    Date: 10=10=25
     File Name: styles.css
 */
 
@@ -60,4 +60,16 @@ footer {
 	font-size: .90em;
 	text-align: center;
 	margin-top: 2em;
+}
+
+#placehoder {
+	display: none;
+}
+
+figure {
+	justify-self: center;
+}
+
+img {
+	padding: 1em;
 }
