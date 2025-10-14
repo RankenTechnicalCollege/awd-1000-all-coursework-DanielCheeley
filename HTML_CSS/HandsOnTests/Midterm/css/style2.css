@@ -1,0 +1,39 @@
+.logo {
+  text-transform: uppercase;
+  font-size: 32px;
+}
+.logo strong {
+  color: #ed563b;
+}
+.head-strong {
+  color: #ed563b;
+  text-transform: uppercase;
+}
+
+#bg-video {
+    min-width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+.video-overlay {
+    position: absolute;
+    background-color: rgba(35,45,57,0.8);
+    top: 0;
+    left: 0;
+    bottom: 7px;
+    width: 100%;
+}
+
+.textcontainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 40px;
+  margin-top: 150px;
+  padding: 70px;
+}
+
+.header-img {
+  width: 10%;
+}
