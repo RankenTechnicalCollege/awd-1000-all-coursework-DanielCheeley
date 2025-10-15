@@ -10,6 +10,8 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- FontAwesome Icons-->
+         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css">
@@ -27,7 +29,7 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Membership</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -43,14 +45,16 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center textcontainer">
                     <div class="col-lg-8 align-self-end">
+                        <h4 id="location">A Club of runners in Belleville, Illinois</h4>
                         <h1 class="text-white font-weight-bold">Running is better in a <strong class="head-strong">club!</strong></h1>
                         <hr class="divider">
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                        <p class="text-white-75 mb-5">Become a member and join us in our family of like minded runners who work on helping each other grow. Getting a membership also grants you access to special discounts and events.</p>
+                        <a class="btn btn-primary btn-xl" href="#about" id="headerBtn">Find Out More</a>
                     </div>
                 </div>
+                <a class="btn btn-primary btn-xl" target="_blank" href="https://teamlocker.squadlocker.com/#/lockers/belleville-running-club" id="gearBtn">Get BRC Gear</a>
             </div>
         </header>
         <!-- About-->
@@ -58,10 +62,16 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <h2 class="text-white mt-0">Membership benefits include:</h2>
                         <hr class="divider divider-light">
-                        <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                        <ul class="text-white-85 mb-4" id="membership-list">
+                            <li>Discounts on regional races, on BRC gear, and at sports-related retailers</li>
+                            <li>RRCA membership and RRCA Footnotes publication</li>
+                            <li>Group runs and training runs</li>
+                            <li>Access to training partners of all abilities</li>
+                            <li>Year-round social activities</li>
+                        </ul>
+                        <a class="btn btn-light btn-xl" target="_blank" href="https://runsignup.com/MemberOrg/BellevilleRunningClub/Register">Join or renew BRC membership</a>
                     </div>
                 </div>
             </div>
@@ -69,35 +79,38 @@
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">At Your Service</h2>
+                <h2 class="text-center mt-0">Weekly Group Runs</h2>
+                <h5 class="text-center mt-0">We meet twice per week on Thursday Evenings and Saturday Mornings.</h5>
                 <hr class="divider">
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-6 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Sturdy Themes</h3>
-                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                            <div class="mb-2"><i class="fa-solid fa-person-walking icon-color"></i></div>
+                            <h3 class="h4 mb-2">3 Mile Route</h3>
+                            <a class="btn btn-light btn-xl routeBtn" target="_blank" href="https://runsignup.com/MemberOrg/BellevilleRunningClub/Register">View Here</a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-6 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Up to Date</h3>
-                            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                            <div class="mb-2"><i class="fa-solid fa-person-running icon-color"></i></div>
+                            <h3 class="h4 mb-2">5 Mile Route</h3>
+                            <a class="btn btn-light btn-xl routeBtn" target="_blank" href="https://runsignup.com/MemberOrg/BellevilleRunningClub/Register">View Here</a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                </div>
+                <div class="row gx-4 gx-lg-5 spacer">
+                    <div class="col-lg-6 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Ready to Publish</h3>
-                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                            <div class="mb-2"><i class="fa-solid fa-calendar icon-color"></i></div>
+                            <h3 class="h4 mb-2">Thursday Evenings at 6PM CST - 3 &amp; 5 mile options</h3>
+                            <p class="text-muted mb-0">Parking Lot of Casa Maria Mexican Restaurant <br> 100 N High St, Belleville, IL 62220</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-6 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                            <div class="mb-2"><i class="fa-solid fa-calendar icon-color"></i></div>
+                            <h3 class="h4 mb-2">Saturday Mornings at 8AM CST - 3 &amp; 5 mile options</h3>
+                            <p class="text-muted mb-0">LongStory Coffee <br> 732 S Illinois St, Belleville, IL 62220</p>
                         </div>
                     </div>
                 </div>
