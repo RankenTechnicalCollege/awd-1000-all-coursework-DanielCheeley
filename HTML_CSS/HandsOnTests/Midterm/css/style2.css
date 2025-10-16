@@ -91,6 +91,66 @@
   margin-top: 100px;
 }
 
+#gallery {
+  color: #ed563b;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-right-radius: 30px;
+  border-top-left-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  box-shadow: 0 -1px 10px black;
+}
+
+#map {
+  margin-top: 75px;
+  width: 100%;
+  height: 0 auto;
+  border: 4px #ed563b solid;
+}
+
+#callToAction {
+  padding: 0px 0px;
+  background-image: url(../assets/img/gym.webp);
+  background-color: rgba(0, 0, 0, 0.7);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  box-shadow: 0 2px 10px black;
+}
+
+strong {
+  color: #ed563b;
+}
+
+.cta-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10%;
+  margin: 0;
+}
+
+#coachInfo {
+  list-style-type: none;
+  padding-top: 15px;
+}
+
+.cta-container h4 {
+  font-weight: bold;
+  color: #ed563b;
+}
+
+.tierContainer {
+  padding-top: 75px;
+}
+
+.col-lg-3 {
+  padding-bottom: 30px;
+}
+
+.col-lg-3 ul {
+  text-align: left;
+}
 
 
 
@@ -112,6 +172,9 @@
   .textcontainer {
     margin-top: 200px;
   }
+  .col-lg-3 ul {
+  text-align: center;
+}
 }
 @media only screen and (max-width: 500px) {
   #membership-list {
