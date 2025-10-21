@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
    <!--
       JavaScript 7th Edition
@@ -11,10 +11,10 @@
 
       Filename: project01-03.html
    -->
-   <meta charset="utf-8" />
+   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Hands-on Project 1-3</title>
-   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -29,17 +29,17 @@
       <form>
         <fieldset id="contactinfo">
           <legend><span>Contact Information</span></legend>
-          <label for="nameinput">
+          <label>
             Name
-            <input type="text" id="nameinput" name="name" />
+            <input type="text" id="nameinput" name="name">
           </label>
-          <label for="emailinput">
+          <label>
             Email
-            <input type="email" id="emailinput" name="email" />
+            <input type="email" id="emailinput" name="email">
           </label>
-          <label for="phoneinput">
+          <label>
             Phone
-            <input type="text" id="phoneinput" name="phone" />
+            <input type="text" id="phoneinput" name="phone">
           </label>
         </fieldset>
         <fieldset id="reserveinfo">
@@ -155,10 +155,10 @@
             </select>
           </fieldset>
         </fieldset>
-        <fieldset id="submitbutton">
-          <input type="button" value="Submit" />
-        </fieldset>
-        
+        <section id="submitbutton">
+          <button type="button"  onclick="document.getElementById('submitMsg').innerHTML='Thank you for your order.'">Submit</button>
+        </section>
+
         <div id="submitMsg"></div>
      </form>
    </article>
