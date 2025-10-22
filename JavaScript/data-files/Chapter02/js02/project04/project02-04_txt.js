@@ -18,7 +18,7 @@
     return "$" + value.toFixed(2);
  }
 
-const CHICKEN_PRICE = 10.95, HALIBUT_PRICE = 13.95, BURGER_PRICE = 9.95, SALMON_PRICE = 18.95, SALAD_PRICE = 7.95, SALES_TAX = 0.07
+const CHICKEN_PRICE = 10.95, HALIBUT_PRICE = 13.95, BURGER_PRICE = 9.95, SALMON_PRICE = 18.95, SALAD_PRICE = 7.95, SALES_TAX = 0.07;
 
 
 
@@ -33,42 +33,40 @@ document.getElementById("salad").addEventListener("change", calcTotal);
 function calcTotal() {
    let cost = 0;
    let buyChicken = document.getElementById("chicken").checked;
-   let buyHailibut = document.getElementById("halibut").checked;
+   let buyHalibut = document.getElementById("halibut").checked;
    let buyBurger = document.getElementById("burger").checked;
    let buySalmon = document.getElementById("salmon").checked;
    let buySalad = document.getElementById("salad").checked;
 
    if (buyChicken == true) {
-      alert("here");
-      cost + CHICKEN_PRICE;
+      cost += CHICKEN_PRICE;
    }
 
-   if (buyHailibut == true) {
-      cost + HALIBUT_PRICE;
+   if (buyHalibut == true) {
+      cost += HALIBUT_PRICE;
    }
 
    if (buyBurger == true) {
-      cost + BURGER_PRICE;
+      cost += BURGER_PRICE;
    }
 
    if (buySalmon == true) {
-      cost + SALMON_PRICE;
+      cost += SALMON_PRICE;
    }
 
    if (buySalad == true) {
-      cost + SALAD_PRICE;
+      cost += SALAD_PRICE;
    }
 
-   return cost;
+   //total cost of all items
+   document.getElementById("foodTotal").innerHTML = formatCurrency(cost);
+
+   //for tax
+   let tax = cost * SALES_TAX;
+   document.getElementById("foodTax").innerHTML = formatCurrency(tax);
+
+   //for total cost
+   let totalCost = cost + tax;
+   document.getElementById("totalBill").innerHTML = formatCurrency(totalCost);
 }
 
-//total cost of all items
-document.getElementById("foodTotal").innerHTML = formatCurrency(cost);
-
-//for tax
-let tax = cost * SALES_TAX;
-document.getElementById("foodTax").innerHTML = formatCurrency(tax);
-
-//for total cost
-let totalCost = cost + tax;
-document.getElementById("totalBill").innerHTML = formatCurrency(totalCost);
