@@ -124,3 +124,10 @@ table#calculator input#decimals {
    background: transparent;
    text-align: center;
 }
+
+/*make row 3 appear*/
+table#calculator td {
+   width: 60px;
+   height: 60px;
+   vertical-align: middle;
+}
