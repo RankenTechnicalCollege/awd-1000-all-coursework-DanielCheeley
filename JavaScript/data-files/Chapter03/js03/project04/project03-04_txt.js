@@ -3,8 +3,8 @@
       Project 03-04
 
       Application to write a list of customer reviews
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   10/28/25
 
       Filename: project03-04.js
 */
@@ -21,3 +21,54 @@ let reviews = [
 ];
 let reviewTitles = ["My Favorite Workout Game", "Poor Choreography", "Buggy with Poor Tech Support", "Nice Improvement"];
 
+function starImages(rating) {
+  let imageText = ""; 
+
+
+  for (let i = 1; i <= rating; i++) {
+    imageText += "<img src='star.png' alt=''>";
+  }
+
+  return imageText;
+}
+
+for (let i = 0; i < reviewers.length; i++) {
+  let reviewCode = "";
+
+
+  if (reviewType[i] === "P") {
+    reviewCode += "<table class='prime'>";
+  } else if (reviewType[i] === "N") {
+    reviewCode += "<table class='new'>";
+  } else {
+    reviewCode += "<table>";
+  }
+
+
+  reviewCode += `
+    <tr>
+      <th>Product</th>
+      <td>${reviewTitles[i]}</td>
+    </tr>
+    <tr>
+      <th>Reviewer</th>
+      <td>${reviewers[i]}</td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td>${reviewDates[i]}</td>
+    </tr>
+    <tr>
+      <th>Rating</th>
+      <td>${starImages(stars[i])}</td>
+    </tr>
+    <tr>
+      <th>Review</th>
+      <td>${reviews[i]}</td>
+    </tr>
+  `;
+
+  reviewCode += "</table>";
+
+  document.getElementsByTagName("article")[0].insertAdjacentHTML("beforeend", reviewCode);
+}
