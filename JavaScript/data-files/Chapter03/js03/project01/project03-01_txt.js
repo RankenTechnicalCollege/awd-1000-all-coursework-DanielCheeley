@@ -3,14 +3,29 @@
       Project 03-01
 
       Application to calculate total order cost
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   10/28/25
 
       Filename: project03-01.js
 */
 
+let menuItems = document.getElementsByClassName("menuItem");
 
+for (let i = 0; i < 5; i++) {
+      menuItems[i].addEventListener("click", calcTotal);
+}
 
+function calcTotal() {
+      let orderTotal = 0;
+
+      for (let i = 0; i < 5; i++) {
+            if (menuItems[i].checked == true) {
+                  orderTotal += Number(menuItems[i].value);
+            }
+      }
+
+      document.getElementById("billTotal").innerHTML = formatCurrency(orderTotal);
+}
 
 
  // Function to display a numeric value as a text string in the format $##.## 
