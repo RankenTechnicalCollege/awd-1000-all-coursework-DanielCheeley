@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drink Manager Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="mainPage.js" defer></script>
+</head>
+<body>
+  <h1>The Technical Collage Bar and Grill</h1>
+  <p>Manage your drink menu live on screen!</p>
+  <div id="menu">
+    <h2>Current Drink Menu:</h2>
+    <ul id="drinkList"></ul>
+  </div>
+  <div class="controls">
+    <input type="text" id="newDrink" placeholder="Add new drink...">
+    <button type="button" onclick="addDrink()">Add Drink</button>
+  </div>
+  <div class="controls">
+    <input type="text" id="removeDrink" placeholder="Remove a drink...">
+    <button type="button" onclick="removeDrink()">Remove Drink</button>
+  </div>
+  <div class="controls">
+    <input type="text" id="oldName" placeholder="Current Name...">
+    <input type="text" id="editedName" placeholder="New Name...">
+    <button type="button" onclick="editDrink()">Edit Drink</button>
+  </div>
+</body>
+</html>
