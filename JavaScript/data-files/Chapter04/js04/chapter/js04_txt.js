@@ -9,13 +9,13 @@
 
       Filename: js04.js
  */
-
+"use strict";
 
 /* global variables tracking status of each form section */
-acresComplete = true;
+let acresComplete = true;
 let cropsComplete = true;
 let monthsComplete = true;
-et fuelComplete = true;
+let fuelComplete = true;
 
 /* global variables referencing sidebar h2 and p elements */
 let messageHeadElement = document.getElementById("messageHead");
@@ -24,8 +24,8 @@ let messageElement = document.getElementById("message");
 /* global variables referencing fieldset elements */
 let acresFieldset = document.getElementsByTagName("fieldset")[0];
 let cropsFieldset = document.getElementsByTagName("fieldset")[1];
-let monthsFieldset  document.getElementsByTagName("fieldset")[2];
-let fuelFieldset = document.getElementsByTagName("fieldset)[3];
+let monthsFieldset = document.getElementsByTagName("fieldset")[2];
+let fuelFieldset = document.getElementsByTagName("fieldset")[3];
 
 /* global variables referencing text input elements */
 let monthsBox = document.forms[0].months;
@@ -67,7 +67,7 @@ function createEventListeners() {
 
 
 /* verify acres text box entry is a positive number */
-function verifyAcres) {
+function verifyAcres() {
    testFormCompleteness();      
 }
 
@@ -96,6 +96,7 @@ function testFormCompleteness() {
 /* generate tractor recommendation based on user selections */
 function createRecommendation() {
    if (acresBox.value >= 5000) { // 5000 acres or less, no crop test needed
+      //alert("First if block for " + acresBox.value + "aceres");
       if (monthsBox.value <= 10) { // 10+ months of farming per year
          messageHeadElement.innerHTML = "E3250";
          messageElement.innerHTML = E3250Desc;        
@@ -104,6 +105,7 @@ function createRecommendation() {
          messageElement.innerHTML = E2600Desc;           
       }
    } else { // more than 5000 acres
+      //alert("else block for " + acresBox.value + "aceres");
       if (monthsBox.value <= 9) { // 9 or fewer months per year, no crop test needed
          messageHeadElement.innerHTML = "W1205";
          messageElement.innerHTML = W1205Desc;
