@@ -4,13 +4,54 @@
       Chapter Case
 
       Application to generate a slide show
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   11/12/25
 
       Filename: js05.js
 */
 
 window.addEventListener("load", setupGallery);
+window.addEventListener("load", createLightbox);
+
+function createLightbox() {
+   //lightbox container
+   let lightbox = document.getElementById("lightbox");
+
+   //parts of lightbox
+   let lbTitle = document.createElement("h1");
+   let lbCounter = document.createElement("div");
+   let lbPrev = document.createElement("div");
+   let lbNext = document.createElement("div");
+   let lbPlay = document.createElement("div");
+   let lbImages = document.createElement("div");
+
+   //design the lightbox title
+   lightbox.appendChild(lbTitle);
+   lbTitle.id = "lbTitle";
+   //design the lightbox counter
+   lightbox.appendChild(lbCounter);
+   lbCounter.id = "lbCounter";
+   //design the lightbox preview button
+   lightbox.appendChild(lbPrev);
+   lbPrev.id = "lbPrev";
+   //design the lightbox next button
+   lightbox.appendChild(lbNext);
+   lbNext.id = "lbNext";
+   //design the lightbox play button
+   lightbox.appendChild(lbPlay);
+   lbPlay.id = "lbPlay";
+   //design the lightbox images
+   lightbox.appendChild(lbImages);
+   lbImages.id = "lbImages";
+
+   //ad images from the imgfiles array to the container
+   for (let i = 0; i < imgCount; i++) {
+      let image = document.createElement("img");
+      image.src = imgFiles[i];
+      image.alt = imgFiles[i];
+      lbImages.appendChild(image);
+   }
+}
 
 function setupGallery() {
    let imageCount = imgFiles.length;
