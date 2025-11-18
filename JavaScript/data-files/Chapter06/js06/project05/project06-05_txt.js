@@ -4,38 +4,43 @@
       Project 06-05
 
       Project to submit a registration form
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   11/18/25
 
       Filename: project06-05.js
 */
 
-window.addEventListener("load", function() {
-   // Calculate the shopping cart when the page loads
+window.addEventListener("load", function () {
+
+   // Calculate the cart on load
    calcCart();
-   
-   // Verify that the user has selected a session to attend
-   document.getElementById("regSubmit").click = sessionTest;   
-   
-   // Recalculate the shopping chart when any field loses the focus
-   document.getElementById("fnBox").blur = calcCart;
-   document.getElementById("lnBox").blur = calcCart; 
-   document.getElementById("groupBox").blur = calcCart;   
-   document.getElementById("mailBox").blur = calcCart;   
-   document.getElementById("phoneBox").blur = calcCart;   
-   document.getElementById("sessionBox").change = calcCart;   
-   document.getElementById("banquetBox").blur = calcCart; 
-   document.getElementById("mediaCB").click = calcCart;   
+
+   // Validate session selection on submit click
+   document.getElementById("regSubmit").addEventListener("click", sessionTest);
+
+   // Recalculate when fields lose focus
+   document.getElementById("fnBox").addEventListener("blur", calcCart);
+   document.getElementById("lnBox").addEventListener("blur", calcCart);
+   document.getElementById("groupBox").addEventListener("blur", calcCart);
+   document.getElementById("mailBox").addEventListener("blur", calcCart);
+   document.getElementById("phoneBox").addEventListener("blur", calcCart);
+   document.getElementById("banquetBox").addEventListener("blur", calcCart);
+
+   // Recalculate on session choice
+   document.getElementById("sessionBox").addEventListener("change", calcCart);
+
+   // Recalculate when media pack checkbox changes
+   document.getElementById("mediaCB").addEventListener("click", calcCart);
 });
 
 
 // Function to verify that a session was selected by the user
 function sessionTest() {
-   var confSession = document.getElementById("sessionBox");
+   let confSession = document.getElementById("sessionBox");
    if (confSession.selectedIndex === -1) {
-      confSession.setValidity("Select a Session Package");
+      confSession.setCustomValidity("Select a Session Package");
    } else {
-      confSession.setValidity("");
+      confSession.setCustomValidity("");
    }
 }
 
@@ -51,11 +56,14 @@ function calcCart() {
    let sessionChoice = "";    // Initial chosen session
 
    // Index of the chosen session
-   let selectedSession = document.getElementById("sessionBox").index;
+   let selectedSession = document.getElementById("sessionBox").selectedIndex;
    
    // Retrieve the name and cost of the selected session  
    if (selectedSession !== -1) {
-      sessionChoice = document.forms.register.elements.sessionBox[selectedSession].text;
+      let sessionElement = document.getElementById("sessionBox").options[selectedSession];
+      sessionChoice = sessionElement.text;
+      sessionCost = sessionElement.value;
+
       sessionCost = document.forms.register.elements.sessionBox[selectedSession].value;
    }
    
@@ -64,7 +72,7 @@ function calcCart() {
    let mediaChoice = "";   // Initial media choice
    
    // If the user selects the media pack, update the choice and cost
-   if (document.forms.register.elements.mediaCB.check) {
+   if (document.forms.register.elements.mediaCB.checked) {
       mediaChoice = "yes";
       mediaCost = 115;
    }
@@ -81,5 +89,6 @@ function calcCart() {
    document.getElementById("regSession").textContent = sessionChoice;
    document.getElementById("regBanquet").textContent = document.forms.register.elements.banquetGuests.value; 
    document.getElementById("regPack").textContent = mediaChoice;
-   document.getElementById("regTotal").textContent = totalCost.toLocaleString("en-US", style: "currency", currency: "USD");
+   document.getElementById("regTotal").textContent = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
+
 }
