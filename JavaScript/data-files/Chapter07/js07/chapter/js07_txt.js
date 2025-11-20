@@ -11,7 +11,101 @@
  */
 
 
+document.getElementById("getFile").onchange = function() {
+      //retreave info about selected file
+      let userFile = this.files[0];
 
+      //verify that a text file is selected
+      try {
+            let isText = userFile.type.startsWith("text");
+            if(!isText){
+                  throw userFile.name + " is not a text file";
+            }
+      
+
+      //read the contents of the selected file
+            let fr = new FileReader();
+            fr.readAsText(userFile);
+
+            //once file has finished loading, display in the page
+            let sourceDoc = document.getElementById("wc_document");
+            fr.onload = function() {
+                  sourceDoc.innerHTML = fr.result;
+
+                  //store the text of the document, remove the html tags
+            let sourceText = sourceDoc.textContent;
+
+            //generate word cloud
+            wordCloud(sourceText);
+            }
+      }
+
+//alert the user to select a text file
+      catch(err){
+            window.alert(err);
+      }
+
+      function wordCloud(sourceText) {
+            //convert the source text to lower case, and remove leading and trailing whitespaces
+            sourceText = sourceText.toLowerCase();
+            sourceText = sourceText.trim();
+
+            let alphaRegx = /[^a-zA-Z\s]/g;
+            sourceText = sourceText.replace(alphaRegx, "");
+
+            for(let i = 0; i < stopWords.length; i++) {
+                  let stopRegx = new RegExp("\\b"+stopWords[i]+"\\b", "g");
+                  sourceText = sourceText.replace(stopRegx, "");
+            }
+
+            let words = sourceText.split(/\s+/g);
+            words.sort();
+
+            //create 2d array in which each item is array containg a word and its duplicate count
+            let unique = [ [words[0], 1] ];
+
+            //keep a index of uniqe words
+            let uniqueIndex = 0;
+
+            for(let i = 1; i < words.length; i++) {
+                  if (words[i] === words[i-1]) {
+                        //increase duplicate count by one
+                        unique[uniqueIndex] [1]++;
+                  }
+                  else {
+                        //add a new word to the unique array
+                        uniqueIndex++;
+                        unique[uniqueIndex] = [words[i], 1];
+                  }
+                  
+            }
+            unique.sort(byDuplicate);
+            function byDuplicate(a, b) {
+                  return b[1]-a[1];
+            }
+
+            //keep top 100
+            unique = unique.splice(0, 100);
+
+            let maxCount = unique[0][1];
+
+            unique.sort();
+
+            //referance the word cloud box
+            let cloudBox = document.getElementById("wc_cloud");
+            cloudBox.innerHTML = "";
+
+            //size each word based on usage
+            for(let i = 0; i < unique.length; i++) {
+                  let word = document.createElement("span");
+                  word.textContent = unique[i][0];
+                  word.style.fontSize = unique[i][1]/maxCount + "em";
+                  cloudBox.appendChild(word);
+            }
+
+            console.log(unique);
+      }
+};
 
 
 
