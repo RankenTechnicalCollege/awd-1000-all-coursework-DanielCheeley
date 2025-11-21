@@ -1,0 +1,58 @@
+body {
+  background-image: url(/JavaScript/hands-on-tests/hot3/images/background.jpg);
+}
+
+.container {
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  border: 3px solid white;
+  border-radius: 30px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+h2 {
+  margin: 20px;
+}
+
+ul {
+  list-style-position: inside; /* bullets inside the border */
+  padding-left: 0;             /* remove default left padding */
+  margin: 20px auto;           /* centers the ul on the page */
+  text-align: left;            /* keeps bullet aligned with text inside li */
+  width: fit-content;          /* ul width shrinks to fit longest li */
+}
+
+ul li {
+  display: list-item;          /* keep bullets visible */
+  padding: 2px 8px;            /* tight padding */
+  margin: 4px 0;               /* vertical spacing between items */
+  width: 200px;           /* border hugs the text */
+}
+
+#addInput {
+  text-align: center;
+  color: white;
+  background-color: rgb(160, 160, 160);
+  border: 2px solid white;
+  border-radius: 20px;
+  height: 40px;
+  padding: 5px;
+}
+
+#addBtn {
+  margin: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 15%;
+}
+
+.removable-item {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 20px;
+  border-width: 20%;
+  cursor: pointer;
+}

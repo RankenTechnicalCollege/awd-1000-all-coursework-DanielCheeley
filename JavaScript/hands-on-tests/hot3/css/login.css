@@ -1,0 +1,36 @@
+body {
+  background-image: url(/JavaScript/hands-on-tests/hot3/images/background.jpg);
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+  margin: auto;
+  margin-top: 14%;
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+.input {
+  justify-self: center;
+  margin: 20px;
+  width: 70%;
+}
+legend {
+  color: white;
+  margin: 20px;
+}
+#submitBtn {
+  margin-top: 20px;
+  padding: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#errorBox {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

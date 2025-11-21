@@ -1,0 +1,48 @@
+body {
+  background-image: url(/JavaScript/hands-on-tests/hot3/images/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h2{
+  text-align: center;
+  color: white;
+  margin: 10px;
+  padding-top: 30px;
+}
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+}
+figure {
+  display: flex;
+  color: white;
+  backdrop-filter: blur(12px);
+  justify-self: center;
+  width: 16%;
+  margin: 10%;
+  display: block;
+  border: 2px solid white;
+  margin: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-radius: 30px;
+}
+figcaption {
+  margin: 15px;
+}
+.productImage {
+  width: 300px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.arrow {
+  width: 8%;
+  cursor: pointer;
+}
+.downArrow {
+  width: 8%;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
