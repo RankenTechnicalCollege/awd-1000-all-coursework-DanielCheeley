@@ -4,8 +4,8 @@
       Project 07-04
 
       Project to create a customer queue
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   11/24/25
 
       Filename: project07-04.js
 */
@@ -26,7 +26,7 @@ let searchButton = document.getElementById("searchButton");
 let removeButton = document.getElementById("removeButton");
 let topButton = document.getElementById("topButton");
 
-let status = document.getElementById("status");
+let statusEl = document.getElementById("status");
 
 generateCustomerList();
 
@@ -40,3 +40,39 @@ function generateCustomerList() {
    }
 }
 
+addButton.onclick = function() {
+    customers.push(customerName.value);
+    generateCustomerList();
+    statusEl.textContent = customerName.value + " added to the end of the queue";
+};
+
+searchButton.onclick = function() {
+    let place = customers.indexOf(customerName.value) + 1;
+
+    if (place === 0) {
+        statusEl.textContent = customerName.value + " is not found in the queue";
+    } else {
+        statusEl.textContent = customerName.value +
+            " found in position " + place + " of the queue";
+    }
+};
+
+removeButton.onclick = function() {
+    let index = customers.indexOf(customerName.value);
+
+    if (index !== -1) {
+        customers.splice(index, 1);
+        statusEl.textContent = customerName.value + " removed from the queue";
+        generateCustomerList();
+    } else {
+        statusEl.textContent = customerName.value + " is not found in the queue";
+    }
+};
+
+topButton.onclick = function() {
+    let topCustomer = customers.shift();
+
+    statusEl.textContent = topCustomer + " is the top customer from the queue";
+
+    generateCustomerList();
+};
