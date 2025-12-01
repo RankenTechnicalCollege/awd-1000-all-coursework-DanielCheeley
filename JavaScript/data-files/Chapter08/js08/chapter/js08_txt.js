@@ -4,8 +4,8 @@
       Chapter case   
 
       Draw Poker Game using Object Oriented Programming
-      Author: 
-      Date:       
+      Author: Daniel Cheeley
+      Date:       12/1/25
 
       Filename:       js08.js
  */
@@ -22,6 +22,24 @@ function playDrawPoker() {
    let betSelection = document.getElementById("bet");
    let bankBox = document.getElementById("bank");
    let cardImages = document.querySelectorAll("img.cardImg");
+   //set initial bank and bet values
+   pokerGame.currentBank = 500;
+   pokerGame.currentBet = 25;
+
+   //create a deck of shuffled cards
+   let myDeck = new pokerDeck();
+   myDeck.shuffle();
+
+   //create an empty poker hand object
+   let myHand = new pokerHand(5);
+
+   //display current bank value
+   bankBox.value = pokerGame.currentBank;
+
+   //change the bet when the selection changes
+   betSelection.onchange = function() {
+      pokerGame.currentBet = parseInt(this.value);
+   }
     
    
       dealButton.addEventListener("click", function() {
@@ -32,8 +50,35 @@ function playDrawPoker() {
          drawButton.disabled = false;       // Turn on the Draw button
          standButton.disabled = false;      // Turn on the Stand Button
          statusBox.textContent = "";        // Erase any status messages
-         
 
+         //reduce the bank by the current bet
+         bankBox.value = pokerGame.placeBet();
+
+         //get a new deck if there are less than 10 cards left in the current deck
+         if(myDeck.cards.length < 10) {
+            myDeck = new pokerDeck();
+            myDeck.shuffle();
+         }
+         //deal 5 cards from the deck to the hand
+         myDeck.dealTo(myHand);
+         console.log(myDeck, myHand);
+         //Display the card images on the table
+         for(let i = 0; i < cardImages.length; i++) {
+            cardImages[i].src = myHand.cards[i].cardImage();
+            //flip the card images when clicked
+            cardImages[i].onclick = function() {
+               if(this.src.includes("cardback.png")) {
+                  //show the front card
+                  this.src = myHand.cards[i].cardImage();
+               } else {
+                  //show the back of the card
+                  this.src = "cardback.png";
+               }
+            }
+         }
+      } else {
+         statusBox.textContent = "Insufficient Funds";
+      }
    });
    
    
@@ -43,7 +88,19 @@ function playDrawPoker() {
       betSelection.disabled = false;      // Turn on the Bet Selection list
       drawButton.disabled = true;         // Turn off the Draw button
       standButton.disabled = true;        // Turn off the Stand Button
-      
+      //replace cards marked to be discarded
+      for(let i = 0; i < cardImages.length; i++) {
+         if(cardImages[i].src.includes("cardback.png")) {
+            //replace the card and its image on the table
+            myHand.replaceCard(i, myDeck);
+               cardImages[i].src = myHand.cards[i].cardImage();
+         }
+      }
+      //evaluate the hand drawn by user
+      statusBox.textContent = myHand.getHandValue();
+
+      //update bank value
+      bankBox.value = pokerGame.payBet(statusBox.textContent);
 
 
    });
@@ -55,6 +112,8 @@ function playDrawPoker() {
       betSelection.disabled = false;      // Turn on the Bet Selection list
       drawButton.disabled = true;         // Turn off the Draw button
       standButton.disabled = true;        // Turn off the Stand Button  
+      //evaluate hand drawn by user
+      statusBox.textContent = myHand.getHandValue();
 
     
    });

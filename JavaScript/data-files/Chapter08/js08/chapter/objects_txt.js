@@ -13,6 +13,96 @@
 
 
 
+/*
+
+//easy way to create an object
+let pokerGame = {
+   currentBank: null,
+   currentBet: null,
+   placeBet: function() {
+      this.currentBank -= this.currentBet;
+      return this.currentBank;
+   }
+}
+*/
+//more common way to create an object, used in C#
+let pokerGame = new Object();
+pokerGame.currentBank = null;
+pokerGame.currentBet = null;
+pokerGame.placeBet = function() {
+   this.currentBank -= this.currentBet;
+      return this.currentBank;
+   }
+   pokerGame.payBet = function(type) {
+      let pay = 0
+      switch(type) {
+         case "Royal Flush": pay = 250; break;
+         case "Straight Flush": pay = 50; break;
+         case "Four of a Kind": pay = 25; break;
+         case "Full House": pay = 9; break;
+         case "Flush": pay = 6; break;
+         case "Straight": pay = 4; break;
+         case "Three of a Kind": pay = 3; break;
+         case "Two Pair": pay = 2; break;
+         case "Jacks or Better": pay = 1; break;
+      }
+      this.currentBank += pay * this.currentBet;
+      return this.currentBank;
+   }
+
+//constructor function for poker cards
+function pokerCard(cardSuit, cardRank) {
+   this.suit = cardSuit;
+   this.rank = cardRank;
+}
+
+//method to reference the image source file for a card
+pokerCard.prototype.cardImage = function() {
+   return this.rank + "_" + this.suit + ".png";
+}
+
+//constructor function for the poker deck
+function pokerDeck() {
+   //list the suits and ranks
+   let suits = ["clubs", "diamonds", "hearts", "spades"];
+   let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+   this.cards = [];
+
+   //add a card for each combination of suit and rank
+   for(let i = 0; i < 4; i++) {
+      for(let j = 0; j < 13; j++) {
+         //add a pokercard object
+         this.cards.push(new pokerCard(suits[i], ranks[j]));
+      }
+   }
+   //method to randomly sort the cards in the deck
+   this.shuffle = function() {
+      this.cards.sort(function() {
+         return 0.5 - Math.random();
+      })
+   }
+   //method to deal cards from the deck into a hand
+   this.dealTo = function(pokerHand) {
+   let cardsDealt = pokerHand.cards.length;
+   pokerHand.cards = this.cards.splice(0, cardsDealt);
+   }
+}
+
+
+
+//constructor function for poker hands
+function pokerHand(handLength) {
+   this.cards = new Array(handLength);
+
+   //method to replace a card in hand with a card from a deck
+   pokerHand.prototype.replaceCard = function(index, pokerDeck) {
+      this.cards[index] = pokerDeck.cards.shift();
+   }
+   //meathod to determine the vale of the pokerhand
+   pokerHand.prototype.getHandValue = function() {
+      return handType(this);
+   }
+}
 
 
 
@@ -29,19 +119,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-   
    /* ------------------------------------------------+
    | The handType() function returns a text string of |
    | the type of hand held by 5-card poker hand.      |
