@@ -4,18 +4,55 @@
       Project 08-03
 
       Project to build a pizza using object oriented programming
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   12/2/25
 
       Filename: project08-03.js
 */
 
 /*---------------- Object Code ----------------------*/
 
+let cart = new Object();
+cart.items = [];
+cart.addItem = function(foodItem) {
+   this.items.push(foodItem);
+}
+
+
+function Pizza() {
+    this.size = null;
+    this.crust = null;
+    this.toppings = [];
+}
+Pizza.prototype.addToCart = function(cart) {
+    cart.items.push(this);
+}
+Pizza.prototype.addTopping = function(topping) {
+    this.toppings.push(topping);
+}
+
+Pizza.prototype.summarize = function() {
+   let summary = "Pizza: ";
+   summary += this.size + " " + this.crust;
+   // Filter out toppings with side === "none"
+   let realToppings = this.toppings.filter(t => t.side !== "none");
+   if (realToppings.length > 0) {
+      summary += " with ";
+      for (let i = 0; i < realToppings.length; i++) {
+         let t = realToppings[i];
+         summary += t.name + " (" + t.side + ")";
+         if (i < realToppings.length - 1) summary += ", ";
+      }
+   }
+   return summary;
+}
 
 
 
-
+function Topping() {
+   this.name = null;
+   this.side = null;
+}
 
 
 
@@ -81,11 +118,29 @@ function drawPizza() {
 function buildPizza() {
    let checkedToppings = document.querySelectorAll("input.topping:checked"); 
 
-
+   let myPizza = new Pizza();
+   myPizza.size = pizzaSizeBox.value;
+   myPizza.crust = pizzaCrustBox.value;
+   for(let i = 0; i < checkedToppings.length; i++) {
+      let myTopping = new Topping();
+      myTopping.name = checkedToppings[i].name;
+      myTopping.side = checkedToppings[i].value;
+      myPizza.addTopping(myTopping);
+   }
+   return myPizza;
 }    
 
 // Function to add the built pizza to the shopping cart
 function updateCart() {
+   let myPizza = buildPizza();
 
+   cart.addItem(myPizza);
+   console.log(cart);
 
+   let p = document.createElement("p");
+   p.textContent = myPizza.summarize();  // fixed method name
+   cartBox.appendChild(p);
+
+   clearPizzaImage();
+   clearToppings();
 }  
