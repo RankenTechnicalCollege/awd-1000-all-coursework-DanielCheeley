@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
    <!--
       JavaScript 7th Edition
       Chapter 8
       Hands-on Project 8-5
 
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   12/5/25
 
       Filename: project08-05.html
    -->
-   <meta charset="utf-8" />
+   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Hands-on Project 8-5</title>
-   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="styles.css">
+   <script src="objects_txt.js" defer></script>
+   <script src="project08-05_txt.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
    </header>
 
    <section>
-      <p id="intro"><label for="getLog">Load a Game Log</label> <input type="file" id="getLog" /></p>
+      <p id="intro"><label for="getLog">Load a Game Log</label> <input type="file" id="getLog"></p>
       <h1 id="title"></h1>
       <p id="description"></p>
       <div id="blackBox"></div>
@@ -47,7 +49,7 @@
             <td id="e7" class="dark"></td>
             <td id="f7" class="light"></td>
             <td id="g7" class="dark"></td>
-            <td id="h7" class="light"></td>         
+            <td id="h7" class="light"></td>
          </tr>
          <tr>
             <td class="notation col">6</td>
@@ -58,7 +60,7 @@
             <td id="e6" class="light"></td>
             <td id="f6" class="dark"></td>
             <td id="g6" class="light"></td>
-            <td id="h6" class="dark"></td>            
+            <td id="h6" class="dark"></td>
          </tr>
          <tr>
             <td class="notation col">5</td>
@@ -81,7 +83,7 @@
             <td id="f4" class="dark"></td>
             <td id="g4" class="light"></td>
             <td id="h4" class="dark"></td>
-         </tr> 
+         </tr>
          <tr>
             <td class="notation col">3</td>
             <td id="a3" class="dark"></td>
@@ -125,15 +127,15 @@
             <td class="notation row">f</td>
             <td class="notation row">g</td>
             <td class="notation row">h</td>
-         </tr> 
+         </tr>
       </table>
       <div id="whiteBox"></div>
-      
+
       <div id="moveButtons">
-         <input type="button" value="Previous Move" id="prevButton"/>    
-         <input type="button" value="Next Move" id="nextButton"/>
+         <input type="button" value="Previous Move" id="prevButton">
+         <input type="button" value="Next Move" id="nextButton">
       </div>
-     
+
       <aside id="moveList">
          <ol id="moveLog">
          </ol>

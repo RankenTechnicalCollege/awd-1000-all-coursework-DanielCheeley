@@ -4,8 +4,8 @@
       Project 08-05
 
       Interface to replay a chess game stored in a JSON file
-      Author: 
-      Date:   
+      Author: Daniel Cheeley
+      Date:   12/5/25
 
       Filename: project08-05.js
 */
@@ -25,42 +25,40 @@ let titleBox = document.getElementById("title");          // h1 heading for game
 let descBox = document.getElementById("description");     // paragraph for game description
 
 getLogButton.onchange = function() {
-   // Retrieve information about the selected file
+
    let JSONfile = this.files[0];
-   
-   // Read the contents of the selected file
    let fr = new FileReader();
    fr.readAsText(JSONfile); 
 
-   // Once the file has finished loading, parse the JSON file
-   // and store the contents in the game object literal
-   fr.onload=function(){ 
-      // Load data from the JSON file into the game object
-      let game = json.parse(fr.result);
-      
+   fr.onload = function() {
+
+      // FIX #1 — correct parse
+      let game = JSON.parse(fr.result);
+
       titleBox.textContent = game.title;
       descBox.textContent = game.description;
-      
+
       writeMoveLog(game.moves);
-      
-      // Create a new chess set object
-      let mySet = chessSet(game);
-      
+
+      // FIX #2 — chessSet() is almost certainly a class
+      let mySet = new chessSet(game);
+
       setupBoard(mySet);
-      
+
       nextButton.onclick = function() {
          if (game.move < game.moves.length - 1) {
-            showNextBoard(game);           
+            showNextBoard(game);
          }
       }
+
       prevButton.onclick = function() {
          if (game.move > -1) {
-            showPrevBoard(game);           
+            showPrevBoard(game);
          }
-      }      
+      }
    }
-   
 };
+
 
 function writeMoveLog(moves) {
    for (let i = 0; i < moves.length; i+=2) {
